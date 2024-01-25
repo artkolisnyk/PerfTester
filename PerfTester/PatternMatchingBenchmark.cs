@@ -19,7 +19,7 @@ public class PatternMatchingBenchmark
         return Text.All(c => (c >= 'a' && c <= 'z') || (c >= 'A' && c >= 'Z'));
     }
     
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public bool IsLetterEarlyReturn()
     {
         return Text.All(c =>

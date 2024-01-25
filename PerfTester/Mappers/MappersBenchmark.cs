@@ -105,7 +105,7 @@ public class MappersBenchmark
         return MapperlyMapper.Map(_order);
     }
     
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public OrderDto Manual()
     {
         return ManualMapper.Map(_order);

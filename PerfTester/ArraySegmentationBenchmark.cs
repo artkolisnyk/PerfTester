@@ -22,7 +22,7 @@ public class ArraySegmentationBenchmark
         return new ArraySegment<string>(Words, Offset, Count);
     }
     
-    [Benchmark]
+    [Benchmark(Baseline = true)]
     public Span<string> Span()
     {
         return Words.AsSpan().Slice(Offset, Count);
