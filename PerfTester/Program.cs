@@ -7,4 +7,4 @@ var config = DefaultConfig.Instance
     .WithOption(ConfigOptions.KeepBenchmarkFiles, false)
     .WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest));
 
-BenchmarkRunner.Run<CastingCollectionObjectsBenchmark>(config);
+BenchmarkRunner.Run<LambdaExpressionVsMethodGroupBenchmark>(config);
