@@ -5,4 +5,4 @@ using PerfTester;
 
 var config = DefaultConfig.Instance.WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest));
 
-BenchmarkRunner.Run<LambdaExpressionVsMethodGroupBenchmark>(config);
+BenchmarkRunner.Run<CallVsCallvirtBenchmark>(config);

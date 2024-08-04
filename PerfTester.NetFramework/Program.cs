@@ -10,7 +10,7 @@ namespace PerfTester.NetFramework
         {
             var config = DefaultConfig.Instance.WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest));
 
-            BenchmarkRunner.Run<StringConcatVsFormatBenchmark>(config);
+            BenchmarkRunner.Run<CallVsCallvirtBenchmark>(config);
         }
     }
 }
