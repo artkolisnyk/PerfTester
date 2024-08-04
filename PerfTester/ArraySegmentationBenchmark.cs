@@ -8,7 +8,12 @@ public class ArraySegmentationBenchmark
     private const int Offset = 1;
     private const int Count = 2;
 
-    private static readonly string[] Words = { "The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog" };
+    private static readonly string[] Words;
+
+    static ArraySegmentationBenchmark()
+    {
+        Words = [ "The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog" ];
+    }
 
     [Benchmark]
     public string[] Linq()

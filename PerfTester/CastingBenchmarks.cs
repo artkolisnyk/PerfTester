@@ -4,7 +4,12 @@ namespace PerfTester;
 
 public class CastingSimpleObjectsBenchmark
 {
-    private static readonly object Person = new Person { Id = Guid.NewGuid(), Name = Guid.NewGuid().ToString() };
+    private static readonly object Person;
+
+    static CastingSimpleObjectsBenchmark()
+    {
+        Person = new Person { Id = Guid.NewGuid(), Name = Guid.NewGuid().ToString() };
+    }
 
     [Benchmark(Baseline = true)]
     public Person HardCast()
@@ -33,9 +38,14 @@ public class CastingSimpleObjectsBenchmark
 [MemoryDiagnoser(false)]
 public class CastingCollectionObjectsBenchmark
 {
-    private static readonly object[] People = Enumerable.Range(0, 100)
-        .Select(x => new Person { Id = Guid.NewGuid(), Name = Guid.NewGuid().ToString() }).ToArray();
-    
+    private static readonly object[] People;
+
+    static CastingCollectionObjectsBenchmark()
+    {
+        People = Enumerable.Range(0, 100)
+            .Select(x => new Person { Id = Guid.NewGuid(), Name = Guid.NewGuid().ToString() }).ToArray();
+    }
+
     [Benchmark(Baseline = true)]
     public Person[] OfType()
     {

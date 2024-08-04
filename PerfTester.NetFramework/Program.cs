@@ -6,9 +6,10 @@ namespace PerfTester.NetFramework
 {
     internal class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
-            var config = DefaultConfig.Instance.WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest));
+            ManualConfig config =
+                DefaultConfig.Instance.WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest));
 
             BenchmarkRunner.Run<CallVsCallvirtBenchmark>(config);
         }

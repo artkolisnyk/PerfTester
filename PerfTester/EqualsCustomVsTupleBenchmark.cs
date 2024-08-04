@@ -41,7 +41,7 @@ public class EqualsCustomVsTupleBenchmark
         return p1.Equals(p2);
     }
 
-    public class PointCustomEquals
+    public sealed class PointCustomEquals
     {
         private readonly int _x;
         private readonly int _y;
@@ -54,7 +54,7 @@ public class EqualsCustomVsTupleBenchmark
         }
     }
 
-    public class PointTupleEquals
+    public sealed class PointTupleEquals
     {
         private readonly int _x;
         private readonly int _y;
@@ -67,7 +67,7 @@ public class EqualsCustomVsTupleBenchmark
         }
     }
 
-    public class PointValueTupleEquals
+    public sealed class PointValueTupleEquals
     {
         private readonly int _x;
         private readonly int _y;
@@ -80,5 +80,5 @@ public class EqualsCustomVsTupleBenchmark
         }
     }
 
-    record PointRecordEquals(int X = 0, int Y = 0);
+    public sealed record PointRecordEquals(int X = 0, int Y = 0);
 }

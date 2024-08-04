@@ -1,8 +1,8 @@
 ﻿using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Order;
 using BenchmarkDotNet.Running;
-using PerfTester;
+using PerfTester.Mappers;
 
-var config = DefaultConfig.Instance.WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest));
+ManualConfig config = DefaultConfig.Instance.WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest));
 
-BenchmarkRunner.Run<CallVsCallvirtBenchmark>(config);
+BenchmarkRunner.Run<MappersBenchmark>(config);

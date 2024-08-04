@@ -1,6 +1,6 @@
 ﻿namespace PerfTester.Mappers;
 
-public class OrderDto
+public sealed class OrderDto
 {
     public CustomerDto Customer { get; set; }
     public OrderOriginDto Origin { get; set; }
@@ -8,10 +8,17 @@ public class OrderDto
     public OrderItemDto[] Items { get; set; }
 }
 
-public class CustomerDto
+public sealed class CustomerDto
 {
     public string Name { get; set; }
     public string Email { get; set; }
+}
+
+public sealed class OrderItemDto
+{
+    public string Name { get; set; }
+    public int Quantity { get; set; }
+    public decimal Price { get; set; }
 }
 
 public enum OrderOriginDto
@@ -19,11 +26,4 @@ public enum OrderOriginDto
     Site,
     Phone,
     Bot
-}
-
-public class OrderItemDto
-{
-    public string Name { get; set; }
-    public int Quantity { get; set; }
-    public decimal Price { get; set; }
 }

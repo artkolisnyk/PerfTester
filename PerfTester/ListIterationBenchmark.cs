@@ -7,8 +7,6 @@ namespace PerfTester;
 [MemoryDiagnoser(false)]
 public class ListIterationBenchmark
 {
-    private static readonly Random Random = new(23);
-    
     private List<int> _items;
     
     [Params(1000, 1_000_000)]
@@ -17,7 +15,7 @@ public class ListIterationBenchmark
     [GlobalSetup]
     public void Setup()
     {
-        _items = Enumerable.Range(0, Size).Select(x => Random.Next()).ToList();
+        _items = Enumerable.Range(0, Size).Select(x => Random.Shared.Next()).ToList();
     }
 
     [Benchmark(Baseline = true)]

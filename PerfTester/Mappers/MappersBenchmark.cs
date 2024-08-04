@@ -8,7 +8,7 @@ using AMapper = AgileObjects.AgileMapper.Mapper;
 
 namespace PerfTester.Mappers;
 
-[SimpleJob(RunStrategy.Throughput)]
+//[SimpleJob(RunStrategy.Throughput)]
 [MemoryDiagnoser]
 public class MappersBenchmark
 {
